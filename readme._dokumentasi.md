@@ -6,7 +6,7 @@ Project saya disini bertemakan Velshelf Apps (Novel Shelf Apps) yaitu sebuah apl
 ![image](https://github.com/rprasetya/Novel/assets/102443842/97f8fdd0-293f-4582-882b-3372af334b13)
 
 ### Tampilan User Bookshelf Page 
-![image](https://github.com/rprasetya/Novel/assets/102443842/a16c847d-a803-4e23-96ab-b0180a0e0eac)
+![image](https://github.com/rprasetya/Novel/assets/102443842/bf16bc74-4a3f-4953-b31c-978565a8a5c9)
 
 ### Tampilan User Contact Page
-![image](https://github.com/rprasetya/Novel/assets/102443842/bf16bc74-4a3f-4953-b31c-978565a8a5c9)
+![image](https://github.com/rprasetya/Novel/assets/102443842/a16c847d-a803-4e23-96ab-b0180a0e0eac)
