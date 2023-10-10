@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="linkToBookshelf">
-        <a href="./bookshelf">Bookshelf</a>
+        <a class="text-dark" href="./bookshelf">Bookshelf</a>
     </div>
 </div>
 @endsection
