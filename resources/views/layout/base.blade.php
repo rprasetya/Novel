@@ -14,11 +14,27 @@
             <li><a class="text-dark" href="./">Home</a></li>
             <li><a class="text-dark" href="/bookshelf">Bookshelf</a></li>
             <li><a class="text-dark" href="/contact">Contact</a></li>
-            <li><a class="text-dark" href="/login">Sign In</a></li>
+            @guest
+            <li><a class="text-dark" href="/login">Sign In</a></li>   
+            @endguest
         </ul>
     </nav>
 </header>
 <main>
+    @auth
+    <div class="profileLoginCont">
+        <a href="/dashboard">
+            <div class="logoProfile">
+                <img src="https://img.icons8.com/ios/100/gender-neutral-user--v1.png" alt="gender-neutral-user--v1"/>
+            </div>
+            <div class="profileLogin">
+                <span>{{ auth()->user()->fullName }}</span>
+                <small>{{ auth()->user()->username }}</small>
+                <span>{{ auth()->user()->email }}</span>
+            </div>
+        </a>
+    </div>                
+    @endauth
     @yield('content')
 </main>
 
