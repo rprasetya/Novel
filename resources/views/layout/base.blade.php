@@ -14,7 +14,7 @@
             <li><a class="text-dark" href="./">Home</a></li>
             <li><a class="text-dark" href="/bookshelf">Bookshelf</a></li>
             <li><a class="text-dark" href="/contact">Contact</a></li>
-            <li><a class="text-dark" href="/login">Login</a></li>
+            <li><a class="text-dark" href="/login">Sign In</a></li>
         </ul>
     </nav>
 </header>

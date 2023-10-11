@@ -373,4 +373,7 @@ main .homeTitle {
   width: 4vw;
 }
 
+.invalidRegist{
+  font-size: 5px;
+}
 /* Login & Register End */
