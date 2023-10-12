@@ -11,7 +11,7 @@
 <header>    
     <nav>
         <ul>
-            <li><a class="text-dark" href="./">Home</a></li>
+            <li><a class="text-dark" href="/">Home</a></li>
             <li><a class="text-dark" href="/bookshelf">Bookshelf</a></li>
             <li><a class="text-dark" href="/contact">Contact</a></li>
             @guest

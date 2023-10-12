@@ -8,43 +8,42 @@
 <div class="shelfTitle">
     <h2>Novel Bookshelf</h2>
     <div class="containerBook">
+        @foreach ($books as $book)
         <ul>
-            <li class="novelImg"><img src="https://upload.wikimedia.org/wikipedia/id/1/1d/File-Hunger_games.jpg" alt=""></li>
-            <li class="bookTitle">The Hunger Games</li>
-            <li class="year">2003</li>
-            <li class="author">Suzanne Collins</li>
+            <li class="novelImg"><img src="{{ $book->imgLink }}" alt=""></li>
+            <li class="bookTitle">{{ $book->bookName }}</li>
+            <li class="year">{{ $book->year }}</li>
+            <li class="author">{{ $book->author }}</li>
         </ul>
-        <ul>
-            <li class="novelImg"><img src="https://upload.wikimedia.org/wikipedia/id/6/6e/ECEI5544big.jpg" alt=""></li>
-            <li class="bookTitle">The Hobbit</li>
-            <li class="year">1937</li>
-            <li class="author">J. R. R. Tolkien</li>
-        </ul>
-        <ul>
-            <li class="novelImg"><img src="https://upload.wikimedia.org/wikipedia/id/4/49/Bumi_%28sampul%29.jpg" alt=""></li>
-            <li class="bookTitle">Bumi</li>
-            <li class="year">2014</li>
-            <li class="author">Tere Liye</li>
-        </ul>
-        <ul>
-            <li class="novelImg"><img src="https://cdn.gramedia.com/uploads/images/1/42028/image_highres/ID_GPU2018MTH04RPON.jpg" alt=""></li>
-            <li class="bookTitle">Ready Player One</li>
-            <li class="year">2011</li>
-            <li class="author">Ernest Cline</li>
-        </ul>
-        <ul>
-            <li class="novelImg"><img src="https://cdnwpseller.gramedia.net/wp-content/uploads/2021/11/04000832/pulang-pergi_tere_liye.jpeg" alt=""></li>
-            <li class="bookTitle">Pulang-Pergi</li>
-            <li class="year">2021</li>
-            <li class="author">Tere Liye</li>
-        </ul>
-        <ul>
-            <li class="novelImg"><img src="https://i0.wp.com/www.rukita.co/stories/wp-content/uploads/2022/05/z-61.jpg?resize=642%2C992&ssl=1" alt=""></li>
-            <li class="bookTitle">Pulang</li>
-            <li class="year">2015</li>
-            <li class="author">Tere Liye</li>
-        </ul>
- 
+        @endforeach    
     </div>
+</div>
+<form class="formComment" action="/bookshelf" method="POST">
+    @csrf
+    <img src="https://img.icons8.com/ios/100/gender-neutral-user--v1.png" alt="Profile Logo"/>
+    <div class="commentSent">
+        <input name="comment" id="comment" type="text" placeholder="Leave a comment here...." required="">
+        <button type="submit">
+            <img src="https://img.icons8.com/ios-glyphs/90/sent.png" alt="sent"/>
+    </div>
+    </button>
+</form>
+<div class="commentCont">
+    @foreach ($comments as $comment)
+    <div class="comment">
+        <div class="profileLogo">
+            <img src="https://img.icons8.com/ios/100/gender-neutral-user--v1.png" alt="Profile Logo"/>
+        </div>
+        <div class="usnComment">
+            <span>{{ $comment->username }}</span>
+            <small>{{ $comment->email }}</small>
+            <article>{{ $comment->comment }}</article>
+        </div>
+        <div class="commentDate">
+            <span>{{ $comment->date }}</span>
+            <small>{{ $comment->created_at }}</small>
+        </div>
+    </div>
+    @endforeach
 </div>
 @endsection

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\BookshelfController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -20,9 +21,8 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/bookshelf', function () {
-    return view('bookshelf');
-});
+Route::get('/bookshelf', [BookshelfController::class, 'bookshelf']);
+Route::post('/bookshelf', [BookshelfController::class, 'comment'])->middleware('auth');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -35,7 +35,6 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', function () {
     return view('register');
 });
-
 Route::post('/register', [RegisterController::class,'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');

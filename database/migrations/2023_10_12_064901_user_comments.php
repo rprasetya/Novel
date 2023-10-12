@@ -11,21 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('velshelf', function (Blueprint $table) {
+        Schema::create('userComments', function (Blueprint $table) {
             $table->id();
-            $table->string('imgLink');
-            $table->string('bookName');
-            $table->date('year');
-            $table->string('author');
-            $table->string('slug');
+            $table->string('username');
+            $table->string('email');
+            $table->text('comment');
+            $table->date('date');
+            $table->timestamp('created_at');
         });
-}
+    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('velshelf');
+        Schema::dropIfExists('userComments');
     }
 };
