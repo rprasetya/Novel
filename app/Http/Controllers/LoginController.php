@@ -31,7 +31,19 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/'); 
+    }
 
+    public function deleteAccount(Request $request){
+        $user = Auth::user();
+
+        if ($user) {
+            $user->delete();
+            Auth::logout();
+            return redirect('/')->with('success', 'Account Deleted');
+        } 
+        else {
+            return redirect('/')->with('error', 'Delete Account Failed');
+        }
     }
 
 }

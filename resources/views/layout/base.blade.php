@@ -21,6 +21,12 @@
     </nav>
 </header>
 <main>
+    @if(session()->has('success'))
+        <div class="successRegisterCont">
+            <h1>{{ session('success') }}</h1>
+        </div>
+    @endif
+
     @auth
     <div class="profileLoginCont">
         <a href="/dashboard">

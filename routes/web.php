@@ -31,6 +31,7 @@ Route::get('/contact', function () {
 Route::get('/login',[LoginController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'auth']);
 Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/delete-acc', [LoginController::class, 'deleteAccount'])->name('delete.account');
 
 Route::get('/register', function () {
     return view('register');
@@ -38,3 +39,7 @@ Route::get('/register', function () {
 Route::post('/register', [RegisterController::class,'store']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware('auth');
+
+Route::get('/change-password', [DashboardController::class, 'changePassword']);
+Route::post('/change-password', [DashboardController::class, 'changePasswordConfirm']);
+
