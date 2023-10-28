@@ -1,6 +1,10 @@
 @extends('layout.base')
 @section('content')
-
+    @if(session()->has('error'))
+    <div class="successRegisterCont">
+        <h1>{{ session('error') }}</h1>
+    </div>
+    @endif
     <div class="formLoginCont">
         <div class="backToLoginBtn">
             <a href="/login">

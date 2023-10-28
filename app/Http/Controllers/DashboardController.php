@@ -31,6 +31,7 @@ class DashboardController extends Controller
             $user->update([
                 'password' => bcrypt($password['newPassword'])
             ]);
+            $request->session()->flash('passwordchange', 'Password has Changed');
             return redirect('/'); 
         }
 

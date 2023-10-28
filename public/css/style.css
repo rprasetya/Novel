@@ -215,11 +215,9 @@ main .homeTitle {
   width: 70vw;
   height: 60vh;
   flex-direction: column;
-  /* border: 1px solid; */
   gap: 10px;
   align-items: center;
   justify-content: center;
-  /* box-shadow: 3px 3px 0px 6px var(--accent-col); */
 }
 
 .contactContainer img {
@@ -232,7 +230,6 @@ main .homeTitle {
   width: 60%;
   height: 90%;
   flex-direction: row;
-  /* background-color: red; */
   gap: 10%;
 }
 
@@ -382,11 +379,12 @@ main .homeTitle {
 .successRegisterCont{
   display: flex;
   justify-content: end;
-  align-items: center;
+  align-items: end;
   /* background-color: red; */
-  width: 95vw;
+  /* width: 95vw; */
   position: absolute;
   top: 5vh;
+  right: 2vw;
 }
 
 .successRegisterCont h1{
@@ -407,13 +405,41 @@ main .homeTitle {
   gap: 2vh;
 }
 
-.dashboard form{
+.confirmDeleteForm{
   display: flex;
+  position: fixed;
+  background-color: #0000006c;
+  width: 100vw;
+  z-index: -1;
+  height: 100vh;
   flex-direction: column;
   gap: 2vh;
+  justify-content: center;
+  align-items: center;
 }
 
-.dashboard form button{
+.confirmDeleteModal{
+  display: flex;
+  width: 40%;
+  height: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-col);
+  border: 1px solid var(--accent-col);
+  box-shadow: 5px 5px 0px var(--accent-col);
+  gap: 2vh;
+  opacity: 0;
+  z-index: -1;
+  transition: .3s ease-in-out;
+}
+
+.confirmDeleteModal h1{
+  font-size: 2vw;
+  /* padding-bottom: 3vh; */
+}
+
+.confirmDeleteModal button{
   border: 1px solid var(--accent-col);
   padding: .5vh 1vw;
   font-size: 2vw;
@@ -421,10 +447,21 @@ main .homeTitle {
   background: none;
   transition: .2s;
   z-index: 2;
+  width: fit-content;
 }
 
-.dashboard form button:hover{
+.confirmDeleteModal button:hover{
   box-shadow: 0px 0px 0px 0px;
+}
+
+.confirmDeleteModal a:hover{
+  cursor: pointer;
+}
+
+.cancelDelete{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
 }
 
 .dashboard a{
@@ -436,14 +473,41 @@ main .homeTitle {
   box-shadow: 3px 3px 0px var(--accent-col);
   background: none;
   transition: .2s;
-  /* z-index: 2; */
 }
 
 .dashboard a:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 0px;
+}
+
+.dashboard button{
+  text-decoration: none;
+  color: var(--accent-col);
+  border: 1px solid var(--accent-col);
+  padding: .5vh 1vw;
+  font-size: 2vw;
+  box-shadow: 3px 3px 0px var(--accent-col);
+  background: none;
+  transition: .2s;
+}
+
+.dashboard button:hover{
+  cursor: pointer;
   box-shadow: 0px 0px 0px 0px;
 }
 /* Dashboard User End*/
 /* Profile Card */
+.profileLoginCont{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 3vh;
+  right: 2vw;
+  gap: 2vh;
+}
+
 .profileLoginCont a{
   display: flex;
   border: 1px solid var(--accent-col);
@@ -452,9 +516,6 @@ main .homeTitle {
   padding: .7vh .8vw;
   gap: 10px;
   transition: .2s;
-  position: absolute;
-  top: 3vh;
-  right: 2vw;
 }
 
 .profileLoginCont a:hover{
@@ -477,6 +538,17 @@ main .homeTitle {
 
 .profileLoginCont a .profileLogin small{
   font-size: .9vw;
+}
+
+.passwordChangeFlash{
+  display: flex;
+}
+
+.passwordChangeFlash h1{
+  font-size: 15px;
+  border: 1px solid var(--accent-col);
+  padding: 10px;
+  box-shadow: 3px 3px 0px var(--accent-col);
 }
 /* Profile Card End */
 /* Comment */

@@ -35,13 +35,17 @@
             <img src="https://img.icons8.com/ios/100/gender-neutral-user--v1.png" alt="Profile Logo"/>
         </div>
         <div class="usnComment">
-            <span>{{ $comment->username }}</span>
-            <small>{{ $comment->email }}</small>
-            <article>{{ $comment->comment }}</article>
+        @foreach ($users as $user)
+            @if ($comment->user_id == $user->id)
+                <span>{{ $user->username }}</span>
+                <small>{{ $user->email }}</small>   
+            @endif
+        @endforeach
+        <article>{{ $comment->comment }}</article>
         </div>
         <div class="commentDate">
-            <span>{{ $comment->date }}</span>
-            <small>{{ $comment->created_at }}</small>
+            <span>{{ $comment->date}}</span>
+            <small>{{ $comment->created_at->setTimezone('Asia/Makassar')->format('H:i:s') }}</small>
         </div>
     </div>
     @endforeach

@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('userComments', function (Blueprint $table) {
+        Schema::create('user_comments', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('email');
+            $table->unsignedBigInteger('user_id');
             $table->text('comment');
             $table->date('date');
             $table->timestamp('created_at');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
     }
 
